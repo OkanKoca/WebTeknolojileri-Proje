@@ -1,46 +1,31 @@
 body
 {
-    background-color: aqua;
-    padding-left: 10%;
-    padding-right: 10% ;
+    background-color: #273c75;
+    padding-left: 5%;
+    padding-right: 5% ;
+}
+.navbar
+{
+  background-color: #192a56;
+  
+}
+.navbar .nav-link
+{
+  color: antiquewhite;
+}
+.navbar .nav-link:hover
+{
+    color: #487eb0;
+}
+.navbar .navbar-brand
+{
+  color: antiquewhite;
+}
+.navbar .nav-link.active
+{
+  color: #40739e;
 }
 li
 {
     list-style-type: none;
 }
-
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .slides {
-    display: flex;
-  }
-  
-  .slides img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  
