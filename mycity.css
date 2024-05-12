@@ -1,12 +1,14 @@
 body
 {
-    background-color: #273c75;
+    background-color: #2f3640;
     padding-left: 5%;
     padding-right: 5% ;
+    color: antiquewhite;
 }
 .navbar
 {
   background-color: #192a56;
+  border-radius: 0px 0px 16px 16px;
   
 }
 .navbar .nav-link
@@ -27,7 +29,7 @@ body
 }
 .carousel-item
 {
-    height: 24rem;
+    height: 32rem;
     background-color: #777;
     color: white;
     position: relative;
