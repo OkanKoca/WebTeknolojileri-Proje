@@ -7,6 +7,7 @@
 body
 {
     background-color: #d4d4d4;
+    padding-bottom: 18rem;
 }
 .navbar
 {
@@ -46,11 +47,12 @@ body
 }
 .main
 {
-  background: url('okankoca\ \(1\).png') no-repeat;
+  background: url('img/okankoca\ \(1\).png') no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
   background-color: #cfe9ff;
+  margin-bottom: 8rem;
 }
 .main h1{
   font-size: 4.4rem;
@@ -67,14 +69,70 @@ body
     background-color: #cfe9ff;
     background-size: contain;
     color: white;
-    position: relative;
 }
 
 .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.carousel-control-prev, .carousel-control-next
+{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.title h3
+{
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  margin-bottom: 4rem;
+}
+.cvtitle h3
+{
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  margin-bottom: 4rem;
+  text-decoration-line: underline;
+}
+.container .row
+{
+  margin-bottom: 4rem;
+}
+main
+{
+  background-color:#e6f4ff;
+  padding: 1rem 4rem 1rem 4rem;
+  height: 100vh;
+  border-radius: 4rem;
+}
+header h3 
+{
+  font-weight: 600;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+figure 
+{
+  float: right;
+}
+figure img{
+  width: 100%;
+  height: auto;
+  border-radius: 8rem;
+}
+header
+{
+  text-align: center;
+}
+aside
+{
+  background-color: #d0e8fa;
+  margin-top: 4rem;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 2rem;
 }
