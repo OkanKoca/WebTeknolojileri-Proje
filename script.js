@@ -27,3 +27,4 @@ function showMovies(data)
         movieEl.innerHTML = ''
     })
 }
+
