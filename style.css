@@ -9,6 +9,7 @@ body
     background-color: #eeeeee;
     padding-bottom: 12rem;
     overflow-y: scroll;
+    overflow-x: hidden  ;
 }
 .navbar
 {
@@ -84,6 +85,11 @@ body
   {
     font-size: 0.2rem;
     font-weight: 100;
+  }
+  #baston
+  {
+    height: 7rem;
+    margin-top: 7rem;
   }
 }
 
