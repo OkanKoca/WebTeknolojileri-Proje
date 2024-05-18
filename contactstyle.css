@@ -8,6 +8,8 @@ body
 {
     background-color: #eeeeee;
     padding-bottom: 18rem;
+    overflow-y:scroll;
+    overflow-x: hidden;
 }
 .navbar
 {
@@ -48,9 +50,7 @@ body
 .container form
 {
     margin-top: 8rem;
-    display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Adjust the height to center vertically */
+    padding: 4rem;
+    border-radius: 2rem;
+    background-color: #e2e2e2;
 }

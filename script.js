@@ -28,3 +28,84 @@ function showMovies(data)
     })
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const email = document.getElementById("email");
+    const feedback = document.getElementById("feedback");
+    const form = document.getElementById("form");
+    const jssubmit = document.getElementById("jssubmit");
+
+    let isJSsubmitted = false;
+
+    jssubmit.addEventListener("click", () =>{
+        isJSsubmitted = true;
+        JSdetection();
+    })
+
+    function JSdetection()
+    {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            
+            feedback.textContent = "";
+
+            const name = document.getElementById("name");
+            const surname = document.getElementById("surname");
+            const nameFeedback = document.getElementById("name-surname-feedback");
+            if(!name.value)
+            {
+                nameFeedback.textContent = "İsminizi yazınız!"
+                return false;
+            }
+            if(!surname.value)
+            {
+                nameFeedback.textContent = "Soyisminizi yazınız!";
+                return false;
+            }
+
+            if (!email.value) {
+                feedback.textContent = "Email adresi giriniz!";
+                return false;
+            }
+            if (!email.value.includes('@')) {
+                feedback.textContent = "Geçersiz email formatı!";
+                return false;
+            }
+            const allowedDomain = "gmail.com";
+            const emailDomain = email.value.split('@')[1];
+            if (emailDomain !== allowedDomain) {
+                feedback.textContent = `Email adresi ${allowedDomain} domainine ait olmalıdır.`;
+                return false;
+            }
+            const genderRadios = document.getElementsByName("cinsiyet");
+            const genFeedback = document.getElementById("gender-feedback");
+            let genderSelected = false;
+            for (const radio of genderRadios) {
+            if (radio.checked) {
+                genderSelected = true;
+                break;
+            }
+            }
+
+            if (!genderSelected) {
+                genFeedback.textContent = "Cinsiyet seçimi yapınız!";
+                return false;
+            }
+            
+            const checkbox = document.getElementById("checkbox");
+            const checkboxFeedback = document.getElementById("checkbox-feedback");
+            if(!checkbox.checked)
+            {
+                checkboxFeedback.textContent = "Kutuyu işaretlemediniz!";
+                return false;
+            }
+            window.location.href = "index.html";
+            return true;
+            
+            
+        });
+    }
+        
+            
+    });
+    

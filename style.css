@@ -139,7 +139,6 @@ main
 {
   background-color:#ffffff;
   padding: 1rem 4rem 4rem 4rem;
-  /* height: 100vh; */
   border-radius: 1rem;
 }
 header h3 
@@ -168,4 +167,11 @@ aside
   width: fit-content;
   padding: 1rem;
   border-radius: 2rem;
+}
+.container form
+{
+    margin-top: 8rem;
+    padding: 4rem;
+    border-radius: 2rem;
+    background-color: #e2e2e2;
 }
