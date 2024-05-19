@@ -2,31 +2,68 @@
 
 const API_KEY = 'api_key=ddceaaf80e8a6017f8d8a30c7e8c2460';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const SEARCH_URL = BASE_URL + '/search/movie?' + API_KEY + '&query=';
+const myRates = [10 , 9, 10, 8, 8, 8, 8.5, 8, 9, 10, 8, 8, 8.5, 8, 8];
 
-GetMovies(API_URL);
+function searchMovies(queries, customRatings) {
+    const promises = queries.map(query => {
+        const url = SEARCH_URL + encodeURIComponent(query);
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const movie = data.results.find(movie => movie.title.toLowerCase() === query.toLowerCase());
+                return movie || null;
+            })
+            .catch(error => {
+                console.error('Error fetching movies:', error);
+                return null;
+            });
+    });
 
-function GetMovies(url)
-{
-    fetch(url)
-        .then(res => res.json()) 
-        .then(data => {
-            console.log(data);
-            showMovies(data.results);
-        })
-        .catch(error => {
-            console.error('Error fetching movies:', error);
-        });
+    Promise.all(promises).then(movies => {
+        const validMovies = movies.filter(movie => movie !== null);
+        if (validMovies.length > 0) {
+            showMovies(validMovies, customRatings);
+        } else {
+            console.error('No movies found');
+        }
+    });
 }
 
-function showMovies(data)
-{
-    data.forEach(movie => {
+function showMovies(movies, ratings) {
+    const container = document.getElementById('movie-container');
+    container.innerHTML = ''; 
+
+    movies.forEach((movie, index) => {
+        const { title, poster_path, vote_average } = movie;
+        const formattedVoteAverage = vote_average.toFixed(1); 
         const movieEl = document.createElement('div');
+        const customRating = ratings[index]
         movieEl.classList.add('movie');
-        movieEl.innerHTML = ''
-    })
+        
+        movieEl.innerHTML = `
+            <div class="img-container">
+                <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
+            </div>
+            <div class="movie-info">
+                <h3 style = "font-weight: 700;">${title}</h3>
+                <div class = "ratings">
+                    <span class="rating"> TMDB : <strong>${formattedVoteAverage}</strong></span> <br>
+                    <span> Benim Puanım: <strong>${customRating}</strong> </span>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(movieEl);
+    });
 }
+
+searchMovies(['Inception', 'Interstellar', 'The Prestige', 'The Man From Earth', 'The Banshees of Inisherin'
+    ,'The Wonderful Story Of Henry Sugar', 'Shutter Island', 'Memento', 'A Beatiful Mind', 'American Psycho', 
+    'V for Vendetta', 'Arrival', 'se7en', 'Hereditary', 'Get Out', 'The Pianist'
+], myRates);
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -77,6 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 feedback.textContent = `Email adresi ${allowedDomain} domainine ait olmalıdır.`;
                 return false;
             }
+
+            const textarea = document.getElementById("textarea");
+            const textFeedback = document.getElementById("text-feedback");
+            if(!textarea.value)
+            {
+                textFeedback.textContent = "Mesajınızı yazınız!";
+                return false;
+            }
+
             const genderRadios = document.getElementsByName("cinsiyet");
             const genFeedback = document.getElementById("gender-feedback");
             let genderSelected = false;

@@ -9,6 +9,10 @@
     <title>Giriş Yap</title>
 </head>
 <body>
+  <script>
+    const feedback = document.getElementsById('feedback');
+        feedback.textContent = 'Email veya şifreniz uyuşmuyor!';
+  </script>
     <nav class="navbar navbar-expand-lg fixed-top text-uppercase">
         <div class="container">
           <a class="navbar-brand font-weight bold" href="index.html">Okan Koca</a>
@@ -17,12 +21,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-nav ml-auto">
-                <a class="nav-link px-lg-4" aria-current="page" href="index.html">HAKKIMDA</a>
-                <a class="nav-link px-lg-4" href="cv.html">ÖZGEÇMİŞ</a>
-                <a class="nav-link px-lg-4" href="mycity.html">ŞEHRİM</a>
-                <a class="nav-link px-lg-4" href="legacy.html">MİRASIMIZ</a>
-                <a class="nav-link px-lg-4" href="contact.html">İLETİŞİM</a>
-                <a class="nav-link active px-lg-4" href="login.html">GİRİŞ YAP</a>
+              <a class="nav-link px-lg-4" aria-current="page" href="index.html">HAKKIMDA</a>
+              <a class="nav-link px-lg-4" href="cv.html">ÖZGEÇMİŞ</a>
+              <a class="nav-link px-lg-4" href="mycity.html">ŞEHRİM</a>
+              <a class="nav-link px-lg-4" href="legacy.html">MİRASIMIZ</a>
+              <a class="nav-link px-lg-4" href="film.html">İLGİ ALANIM</a>
+              <a class="nav-link px-lg-4" href="contact.html">İLETİŞİM</a>
+              <a class="nav-link active px-lg-4" href="login.html">GİRİŞ YAP</a>
     
             </div>
           </div>
@@ -38,14 +43,17 @@
         <form method="post" action="login.php">
           <div class="form-group">
             <label for="InputEmail">Email adresi</label>
-            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Email adresinizi giriniz">
+            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name = "numara" placeholder="Email adresinizi giriniz">
           </div>
           <div class="form-group" style="margin-top: 0.5rem">
             <label for="InputPassword">Şifre</label>
-            <input type="password" class="form-control" id="InputPassword" placeholder="Şifrenizi giriniz">
+            <input type="password" class="form-control" id="InputPassword" name = "sifre" placeholder="Şifrenizi giriniz">
           </div>
-          <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;">Giriş Yap</button>
+          <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;" name = "submit">Giriş Yap</button>
+          <div class="feedback" style="color:red;" name = "feedback" id = "feedback"></div>
         </form>
       </div>
+      
+      
 </body>
 </html>

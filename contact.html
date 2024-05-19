@@ -19,12 +19,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <div class="navbar-nav ml-auto">
-            <a class="nav-link px-lg-4" aria-current="page" href="index.html">HAKKIMDA</a>
-            <a class="nav-link px-lg-4" href="cv.html">ÖZGEÇMİŞ</a>
-            <a class="nav-link px-lg-4" href="mycity.html">ŞEHRİM</a>
-            <a class="nav-link px-lg-4" href="legacy.html">MİRASIMIZ</a>
-            <a class="nav-link active px-lg-4" href="contact.html">İLETİŞİM</a>
-            <a class="nav-link px-lg-4" href="login.html">GİRİŞ YAP</a>
+          <a class="nav-link px-lg-4" aria-current="page" href="index.html">HAKKIMDA</a>
+          <a class="nav-link px-lg-4" href="cv.html">ÖZGEÇMİŞ</a>
+          <a class="nav-link px-lg-4" href="mycity.html">ŞEHRİM</a>
+          <a class="nav-link px-lg-4" href="legacy.html">MİRASIMIZ</a>
+          <a class="nav-link px-lg-4" href="film.html">İLGİ ALANIM</a>
+          <a class="nav-link active px-lg-4" href="contact.html">İLETİŞİM</a>
+          <a class="nav-link px-lg-4" href="login.html">GİRİŞ YAP</a>
         </div>
       </div>
       <div class="navbar-nav ml-auto">
@@ -36,6 +37,7 @@
 
     <div class="container">
       <form action="index.html" method="POST" id = "form">
+        
         <div class="form-group">
           <label for="name" class="form-label">İsim</label>
           <input type="text" class="form-control" id="name" placeholder="İsminizi giriniz">
@@ -49,6 +51,11 @@
         <div class="form-group" style="margin-top: 0.5rem;">
           <label for="email" class="form-label">Email</label>
           <input type="text" class="form-control" id="email" placeholder="Email adresinizi giriniz">
+        </div>
+
+        <div class="form-group" style="margin-top: 0.5rem;">
+          <label for="textarea" class="form-label">Mesaj</label>
+          <textarea class="form-control" id="textarea" rows="5"></textarea>
         </div>
         
         <div class="mb-3">
@@ -164,6 +171,7 @@
         <div id = "name-surname-feedback" style="color:red;"></div>
         <div id = "gender-feedback" style="color:red;"></div>
         <div id = "checkbox-feedback" style="color:red;"></div>
+        <div id = "text-feedback" style="color:red;"></div>
 
         <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;" id = "jssubmit">Javascript Gönder</button>
         <button type="reset" class="btn btn-primary" style="margin-top: 1.5rem; margin-left: 0.5rem;">Sıfırla</button>
