@@ -84,24 +84,33 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             
+            const nameFeedback = document.getElementById("name-surname-feedback");
+            const textFeedback = document.getElementById("text-feedback");
+            const checkboxFeedback = document.getElementById("checkbox-feedback");
+            const genFeedback = document.getElementById("gender-feedback");
+
             feedback.textContent = "";
+            nameFeedback.textContent = "";
+            textFeedback.textContent = "";
+            genFeedback.textContent = "";
+            checkboxFeedback.textContent = "";
 
             const name = document.getElementById("name");
             const surname = document.getElementById("surname");
-            const nameFeedback = document.getElementById("name-surname-feedback");
+            
             if(!name.value)
             {
-                nameFeedback.textContent = "İsminizi yazınız!"
+                nameFeedback.textContent = "İsim zorunludur."
                 return false;
             }
             if(!surname.value)
             {
-                nameFeedback.textContent = "Soyisminizi yazınız!";
+                nameFeedback.textContent = "Soyisim zorunludur.";
                 return false;
             }
 
             if (!email.value) {
-                feedback.textContent = "Email adresi giriniz!";
+                feedback.textContent = "Email adresi zorunludur.";
                 return false;
             }
             if (!email.value.includes('@')) {
@@ -116,15 +125,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const textarea = document.getElementById("textarea");
-            const textFeedback = document.getElementById("text-feedback");
+            
             if(!textarea.value)
             {
-                textFeedback.textContent = "Mesajınızı yazınız!";
+                textFeedback.textContent = "Mesaj zorunludur.";
                 return false;
             }
 
             const genderRadios = document.getElementsByName("cinsiyet");
-            const genFeedback = document.getElementById("gender-feedback");
+            
             let genderSelected = false;
             for (const radio of genderRadios) {
             if (radio.checked) {
@@ -134,19 +143,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (!genderSelected) {
-                genFeedback.textContent = "Cinsiyet seçimi yapınız!";
+                genFeedback.textContent = "Cinsiyet seçimi zorunludur.";
                 return false;
             }
             
             const checkbox = document.getElementById("checkbox");
-            const checkboxFeedback = document.getElementById("checkbox-feedback");
+            
             if(!checkbox.checked)
             {
-                checkboxFeedback.textContent = "Kutuyu işaretlemediniz!";
+                checkboxFeedback.textContent = "Onay kutusunu işaretlemeniz gerekmektedir.";
                 return false;
             }
-            window.location.href = "index.html";
-            return true;
+          
+                alert('Form başarıyla gönderildi!');
+                name.value = '';
+                surname.value = '';
+                email.value = '';
+                textarea.value ='';
+                genderRadios.values = '';
+                checkbox.checked = false;
+                return true;
+            
             
             
         });
