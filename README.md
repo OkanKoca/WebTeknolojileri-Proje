@@ -1,4 +1,5 @@
 #WebTeknolojileri-Proje
+
 Bu proje, Sakarya Üniversitesi Web Teknolojileri dersi kapsamında geliştirilmiş, kişisel bilgileri ve memleket tanıtımını içeren bir web sitesidir.
 
 🔧 Kullanılan Teknolojiler
