@@ -7,7 +7,9 @@ HTML
 
 CSS
 
-JavaScript
+Bootstrap
+
+JavaScript, VueJs
 
 PHP
 
